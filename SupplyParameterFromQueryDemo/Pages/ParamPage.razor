@@ -1,0 +1,25 @@
+﻿@page "/parampage"
+
+<h3>ParamPage</h3>
+<br />
+<h3>Int Param: @IntParam</h3>
+<br />
+<h3>String Param: @StringParam</h3>
+<br />
+<h3>Bool Param: @BoolParam</h3>
+<br />
+<h3>Array Param: @ArrayParam</h3>
+
+@code {
+    [Parameter, SupplyParameterFromQuery]
+    public int IntParam { get; set; }
+
+    [Parameter, SupplyParameterFromQuery]
+    public string? StringParam { get; set; }
+
+    [Parameter, SupplyParameterFromQuery]
+    public bool BoolParam { get; set; }
+    
+    [Parameter, SupplyParameterFromQuery]
+    public string? ArrayParam { get; set; }
+}

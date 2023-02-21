@@ -1,0 +1,28 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<a href="/parampage?intparam=@intParam">Int Param</a>
+
+<a href="/parampage?stringparam=@stringParam">String Param</a>
+
+<a href="/parampage?boolparam=@boolParam">Bool Param</a>
+
+<ul>
+    @foreach(var item in arrayParam)
+    {
+        <li>
+            <a href="/parampage?arrayparam=@item">@item</a>
+        </li>
+    }
+</ul>
+
+@code {
+    public int intParam = 5;
+
+    public string stringParam = "Parameter";
+
+    public bool boolParam = true;
+
+    public string[] arrayParam = { "First", "Second", "Third", "Fourth", "Fifth" };
+}
