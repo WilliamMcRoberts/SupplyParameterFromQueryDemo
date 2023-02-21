@@ -9,6 +9,16 @@
 <h3>Bool Param: @BoolParam</h3>
 <br />
 <h3>Array Param: @ArrayParam</h3>
+<br />
+<h3>Whole Array:</h3>
+
+@if(WholeArray is not null)
+{
+    @foreach(var item in WholeArray)
+    {
+        <p>@item</p>
+    }
+}
 
 @code {
     [Parameter, SupplyParameterFromQuery]
@@ -22,4 +32,7 @@
     
     [Parameter, SupplyParameterFromQuery]
     public string? ArrayParam { get; set; }
+    
+    [Parameter, SupplyParameterFromQuery(Name = "item")]
+    public string[]? WholeArray { get; set; }
 }
